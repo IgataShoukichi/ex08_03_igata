@@ -127,7 +127,7 @@ void DisplayVolumeSurface(Solid* solid) {
 }
 int main()
 {
-	Box box{ 80.0, 20, 0.1 };
+	Box box{ 80.0, 100, 0.1 };
 	Cylinder cylinder{ 30, 10 };
 	Cone cone{ 30, 10 };
 	Sphere sphere{ 20 };
@@ -137,6 +137,7 @@ int main()
 		DisplayVolumeSurface(solid[i]);
 	}
 	int kuronekoSize[] = { 60,80,100,120,140,160,180,200 };
+	int jppostSize[] = { 60,80,100,120,140,160,170 };
 	int i;
 	double length;
 	// 箱の宅急便のサイズを求める
@@ -147,11 +148,24 @@ int main()
 			break;
 		}
 	}
+	for (i = 0; i < _countof(jppostSize); i++) {
+		if (length <= jppostSize[i]) {
+			break;
+		}
+	}
 	if (i < _countof(kuronekoSize)) {
 		cout << "箱のサイズは" << kuronekoSize[i] << "サイズです" << endl;
+		cout << "クロネコヤマトで送れます" << endl;
 	}
-	else {
-		cout << "この箱は宅急便では送れません" << endl;
+	else if (!(i < _countof(kuronekoSize))) {
+		cout << "この箱はクロネコヤマトでは送れません" << endl;
+	}
+	if (i < _countof(jppostSize)) {
+		cout << "箱のサイズは" << jppostSize[i] << "サイズです" << endl;
+		cout << "ゆうパックで送れます" << endl;
+	}
+	else if (!(i < _countof(jppostSize))) {
+		cout << "この箱はゆうパックでは送れません" << endl;
 	}
 
 	// 円柱の宅急便のサイズを求める
@@ -161,13 +175,25 @@ int main()
 			break;
 		}
 	}
+	for (i = 0; i < _countof(jppostSize); i++) {
+		if (length <= jppostSize[i]) {
+			break;
+		}
+	}
 	if (i < _countof(kuronekoSize)) {
 		cout << "円柱のサイズは" << kuronekoSize[i] << "サイズです" << endl;
+		cout << "クロネコヤマトで送れます" << endl;
 	}
-	else {
-		cout << "この円柱は宅急便では送れません" << endl;
+	else if (!(i < _countof(kuronekoSize))) {
+		cout << "この円柱はクロネコヤマトでは送れません" << endl;
 	}
-
+	if (i < _countof(jppostSize)) {
+		cout << "円柱のサイズは" << jppostSize[i] << "サイズです" << endl;
+		cout << "ゆうパックで送れます" << endl;
+	}
+	else if (!(i < _countof(jppostSize))) {
+		cout << "この円柱はゆうパックでは送れません" << endl;
+	}
 	// 円錐の宅急便のサイズを求める
 	length = cone.GetRadius() * 4 + cone.GetHeight();
 	for (i = 0; i < _countof(kuronekoSize); i++) {
@@ -175,11 +201,24 @@ int main()
 			break;
 		}
 	}
+	for (i = 0; i < _countof(jppostSize); i++) {
+		if (length <= jppostSize[i]) {
+			break;
+		}
+	}
 	if (i < _countof(kuronekoSize)) {
 		cout << "円錐のサイズは" << kuronekoSize[i] << "サイズです" << endl;
+		cout << "クロネコヤマトで送れます" << endl;
 	}
-	else {
-		cout << "この円錐は宅急便では送れません" << endl;
+	else if (!(i < _countof(kuronekoSize))) {
+		cout << "この円錐はクロネコヤマトでは送れません" << endl;
+	}
+	if (i < _countof(jppostSize)) {
+		cout << "円錐のサイズは" << jppostSize[i] << "サイズです" << endl;
+		cout << "ゆうパックで送れます" << endl;
+	}
+	else if (!(i < _countof(jppostSize))) {
+		cout << "この円錐はゆうパックでは送れません" << endl;
 	}
 
 	// 球の宅急便のサイズを求める
@@ -189,10 +228,24 @@ int main()
 			break;
 		}
 	}
+	for (i = 0; i < _countof(jppostSize); i++) {
+		if (length <= jppostSize[i]) {
+			break;
+		}
+	}
 	if (i < _countof(kuronekoSize)) {
 		cout << "球のサイズは" << kuronekoSize[i] << "サイズです" << endl;
+		cout << "クロネコヤマトで送れます" << endl;
 	}
-	else {
-		cout << "この球は宅急便では送れません" << endl;
+	else if (!(i < _countof(kuronekoSize))) {
+		cout << "この球はクロネコヤマトでは送れません" << endl;
 	}
+	if (i < _countof(jppostSize)) {
+		cout << "球のサイズは" << jppostSize[i] << "サイズです" << endl;
+		cout << "ゆうパックで送れます" << endl;
+	}
+	else if (!(i < _countof(jppostSize))) {
+		cout << "この球はゆうパックでは送れません" << endl;
+	}
+
 }
