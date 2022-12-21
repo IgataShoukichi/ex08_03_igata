@@ -128,7 +128,7 @@ void DisplayVolumeSurface(Solid* solid) {
 int main()
 {
 	Box box{ 80.0, 100, 0.1 };
-	Cylinder cylinder{ 30, 10 };
+	Cylinder cylinder{ 300, 100 };
 	Cone cone{ 30, 10 };
 	Sphere sphere{ 20 };
 	const int N_TABLE = 4;
